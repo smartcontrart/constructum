@@ -1,0 +1,5 @@
+1) chose the color, then the decoration, then the outer shape (color will be the same)
+inner color = outer color
+Once selection made: the final result shows up (still image) - this image will be the placeholder of the reveal
+Animation mechanic?
+On the website, the final result (still image) will change as they change the selections

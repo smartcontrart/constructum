@@ -1,0 +1,10 @@
+1) update contract aaddress in .env files (client and back end)
+2) make sure we use prod address
+3) generate the AL
+
+1) Set mint contract as admin
+2) Set URI
+
+1) Set recipient
+2) Set signer
+3) Set constructum address

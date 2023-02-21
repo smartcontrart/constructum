@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "@manifoldxyz/creator-core-solidity": "^1.0.4",
+    "@manifoldxyz/royalty-registry-solidity": "^1.0.7",
+    "@openzeppelin/contracts": "^4.8.0",
+    "@truffle/hdwallet-provider": "^2.0.3",
+    "bignumber.js": "^9.0.2",
+    "dotenv": "^16.0.0",
+    "operator-filter-registry": "^1.4.0"
+  },
+  "devDependencies": {
+    "erc721a": "^4.2.3",
+    "truffle-plugin-verify": "^0.6.1"
+  }
+}

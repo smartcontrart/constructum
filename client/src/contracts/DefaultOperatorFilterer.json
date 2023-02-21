@@ -1,0 +1,492 @@
+{
+  "contractName": "DefaultOperatorFilterer",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "operator",
+          "type": "address"
+        }
+      ],
+      "name": "OperatorNotAllowed",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "OPERATOR_FILTER_REGISTRY",
+      "outputs": [
+        {
+          "internalType": "contract IOperatorFilterRegistry",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.17+commit.8df45f5f\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"}],\"name\":\"OperatorNotAllowed\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"OPERATOR_FILTER_REGISTRY\",\"outputs\":[{\"internalType\":\"contract IOperatorFilterRegistry\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"details\":\"Please note that if your token contract does not provide an owner with EIP-173, it must provide         administration methods on the contract itself to interact with the registry otherwise the subscription         will be locked to the options set during construction.\",\"errors\":{\"OperatorNotAllowed(address)\":[{\"details\":\"Emitted when an operator is not allowed.\"}]},\"kind\":\"dev\",\"methods\":{\"constructor\":{\"details\":\"The constructor that is called when the contract is being deployed.\"}},\"title\":\"DefaultOperatorFilterer\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"notice\":\"Inherits from OperatorFilterer and automatically subscribes to the default OpenSea subscription.\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"operator-filter-registry/src/DefaultOperatorFilterer.sol\":\"DefaultOperatorFilterer\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"operator-filter-registry/src/DefaultOperatorFilterer.sol\":{\"keccak256\":\"0xf65af8e5c2d6a8719cdbc5aa0e6923e1701bdc59f77ff0101b38d9d03d76d65b\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://8d3ea78dfa813244258d9192a05a3ae13f46880647da5a4c026c8231f38e2507\",\"dweb:/ipfs/QmeE4ycD8bw1uj7o33L48kiXT7YZ7RkegaNWb24nQ7MLgc\"]},\"operator-filter-registry/src/IOperatorFilterRegistry.sol\":{\"keccak256\":\"0x56ad8df389958dbf89cc30196e5f37779ee87d2e8b551d84a8d0a696e1c69937\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://7ca12c8b2d8a6c0ef1ba2204be8628c1443d9371c37aa619a3cc485267b6a30c\",\"dweb:/ipfs/QmaKXZeCR6kPRXCYo6NZJFnbBEa4eWwBKRYAKyY87vBrtc\"]},\"operator-filter-registry/src/OperatorFilterer.sol\":{\"keccak256\":\"0xa09fc95700d92846d0809a2dc39ca36eb4fcf48642fc83c3d1b5ebe62f957256\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://adf63229f1f5484c27ca8d86cf73af5244bf163c8e77cc193701f359c9bdb175\",\"dweb:/ipfs/QmVZPr3BM9CjwLyxHjdjbqBUUSS2Vzr1WRktadgV9UDqvq\"]},\"operator-filter-registry/src/lib/Constants.sol\":{\"keccak256\":\"0x7528c20593155653256c5ea043e0f56e65b2f8c59946c61fb136a22868d4184e\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://71d0b1ac75a8bfb054d13415b01a32fdee313975ef154ed21e8e49ef92a1b308\",\"dweb:/ipfs/QmTMjZne7RgUGLjkB5RfyZwuny2Qw1AmznYuHQJp5rePdu\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.13;\n\nimport {OperatorFilterer} from \"./OperatorFilterer.sol\";\nimport {CANONICAL_CORI_SUBSCRIPTION} from \"./lib/Constants.sol\";\n/**\n * @title  DefaultOperatorFilterer\n * @notice Inherits from OperatorFilterer and automatically subscribes to the default OpenSea subscription.\n * @dev    Please note that if your token contract does not provide an owner with EIP-173, it must provide\n *         administration methods on the contract itself to interact with the registry otherwise the subscription\n *         will be locked to the options set during construction.\n */\n\nabstract contract DefaultOperatorFilterer is OperatorFilterer {\n    /// @dev The constructor that is called when the contract is being deployed.\n    constructor() OperatorFilterer(CANONICAL_CORI_SUBSCRIPTION, true) {}\n}\n",
+  "sourcePath": "operator-filter-registry/src/DefaultOperatorFilterer.sol",
+  "ast": {
+    "absolutePath": "operator-filter-registry/src/DefaultOperatorFilterer.sol",
+    "exportedSymbols": {
+      "CANONICAL_CORI_SUBSCRIPTION": [
+        3013
+      ],
+      "DefaultOperatorFilterer": [
+        2646
+      ],
+      "OperatorFilterer": [
+        3005
+      ]
+    },
+    "id": 2647,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 2629,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".13"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "32:24:12"
+      },
+      {
+        "absolutePath": "operator-filter-registry/src/OperatorFilterer.sol",
+        "file": "./OperatorFilterer.sol",
+        "id": 2631,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 2647,
+        "sourceUnit": 3006,
+        "src": "58:56:12",
+        "symbolAliases": [
+          {
+            "foreign": {
+              "id": 2630,
+              "name": "OperatorFilterer",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": 3005,
+              "src": "66:16:12",
+              "typeDescriptions": {}
+            },
+            "nameLocation": "-1:-1:-1"
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "operator-filter-registry/src/lib/Constants.sol",
+        "file": "./lib/Constants.sol",
+        "id": 2633,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 2647,
+        "sourceUnit": 3014,
+        "src": "115:64:12",
+        "symbolAliases": [
+          {
+            "foreign": {
+              "id": 2632,
+              "name": "CANONICAL_CORI_SUBSCRIPTION",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": 3013,
+              "src": "123:27:12",
+              "typeDescriptions": {}
+            },
+            "nameLocation": "-1:-1:-1"
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "abstract": true,
+        "baseContracts": [
+          {
+            "baseName": {
+              "id": 2635,
+              "name": "OperatorFilterer",
+              "nameLocations": [
+                "664:16:12"
+              ],
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 3005,
+              "src": "664:16:12"
+            },
+            "id": 2636,
+            "nodeType": "InheritanceSpecifier",
+            "src": "664:16:12"
+          }
+        ],
+        "canonicalName": "DefaultOperatorFilterer",
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": {
+          "id": 2634,
+          "nodeType": "StructuredDocumentation",
+          "src": "180:437:12",
+          "text": " @title  DefaultOperatorFilterer\n @notice Inherits from OperatorFilterer and automatically subscribes to the default OpenSea subscription.\n @dev    Please note that if your token contract does not provide an owner with EIP-173, it must provide\n         administration methods on the contract itself to interact with the registry otherwise the subscription\n         will be locked to the options set during construction."
+        },
+        "fullyImplemented": true,
+        "id": 2646,
+        "linearizedBaseContracts": [
+          2646,
+          3005
+        ],
+        "name": "DefaultOperatorFilterer",
+        "nameLocation": "637:23:12",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 2644,
+              "nodeType": "Block",
+              "src": "834:2:12",
+              "statements": []
+            },
+            "documentation": {
+              "id": 2637,
+              "nodeType": "StructuredDocumentation",
+              "src": "687:76:12",
+              "text": "@dev The constructor that is called when the contract is being deployed."
+            },
+            "id": 2645,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [
+              {
+                "arguments": [
+                  {
+                    "id": 2640,
+                    "name": "CANONICAL_CORI_SUBSCRIPTION",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 3013,
+                    "src": "799:27:12",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  {
+                    "hexValue": "74727565",
+                    "id": 2641,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "bool",
+                    "lValueRequested": false,
+                    "nodeType": "Literal",
+                    "src": "828:4:12",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    },
+                    "value": "true"
+                  }
+                ],
+                "id": 2642,
+                "kind": "baseConstructorSpecifier",
+                "modifierName": {
+                  "id": 2639,
+                  "name": "OperatorFilterer",
+                  "nameLocations": [
+                    "782:16:12"
+                  ],
+                  "nodeType": "IdentifierPath",
+                  "referencedDeclaration": 3005,
+                  "src": "782:16:12"
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "782:51:12"
+              }
+            ],
+            "name": "",
+            "nameLocation": "-1:-1:-1",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2638,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "779:2:12"
+            },
+            "returnParameters": {
+              "id": 2643,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "834:0:12"
+            },
+            "scope": 2646,
+            "src": "768:68:12",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "internal"
+          }
+        ],
+        "scope": 2647,
+        "src": "619:219:12",
+        "usedErrors": [
+          2876
+        ]
+      }
+    ],
+    "src": "32:807:12"
+  },
+  "legacyAST": {
+    "absolutePath": "operator-filter-registry/src/DefaultOperatorFilterer.sol",
+    "exportedSymbols": {
+      "CANONICAL_CORI_SUBSCRIPTION": [
+        3013
+      ],
+      "DefaultOperatorFilterer": [
+        2646
+      ],
+      "OperatorFilterer": [
+        3005
+      ]
+    },
+    "id": 2647,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 2629,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".13"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "32:24:12"
+      },
+      {
+        "absolutePath": "operator-filter-registry/src/OperatorFilterer.sol",
+        "file": "./OperatorFilterer.sol",
+        "id": 2631,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 2647,
+        "sourceUnit": 3006,
+        "src": "58:56:12",
+        "symbolAliases": [
+          {
+            "foreign": {
+              "id": 2630,
+              "name": "OperatorFilterer",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": 3005,
+              "src": "66:16:12",
+              "typeDescriptions": {}
+            },
+            "nameLocation": "-1:-1:-1"
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "operator-filter-registry/src/lib/Constants.sol",
+        "file": "./lib/Constants.sol",
+        "id": 2633,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 2647,
+        "sourceUnit": 3014,
+        "src": "115:64:12",
+        "symbolAliases": [
+          {
+            "foreign": {
+              "id": 2632,
+              "name": "CANONICAL_CORI_SUBSCRIPTION",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": 3013,
+              "src": "123:27:12",
+              "typeDescriptions": {}
+            },
+            "nameLocation": "-1:-1:-1"
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "abstract": true,
+        "baseContracts": [
+          {
+            "baseName": {
+              "id": 2635,
+              "name": "OperatorFilterer",
+              "nameLocations": [
+                "664:16:12"
+              ],
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 3005,
+              "src": "664:16:12"
+            },
+            "id": 2636,
+            "nodeType": "InheritanceSpecifier",
+            "src": "664:16:12"
+          }
+        ],
+        "canonicalName": "DefaultOperatorFilterer",
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": {
+          "id": 2634,
+          "nodeType": "StructuredDocumentation",
+          "src": "180:437:12",
+          "text": " @title  DefaultOperatorFilterer\n @notice Inherits from OperatorFilterer and automatically subscribes to the default OpenSea subscription.\n @dev    Please note that if your token contract does not provide an owner with EIP-173, it must provide\n         administration methods on the contract itself to interact with the registry otherwise the subscription\n         will be locked to the options set during construction."
+        },
+        "fullyImplemented": true,
+        "id": 2646,
+        "linearizedBaseContracts": [
+          2646,
+          3005
+        ],
+        "name": "DefaultOperatorFilterer",
+        "nameLocation": "637:23:12",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 2644,
+              "nodeType": "Block",
+              "src": "834:2:12",
+              "statements": []
+            },
+            "documentation": {
+              "id": 2637,
+              "nodeType": "StructuredDocumentation",
+              "src": "687:76:12",
+              "text": "@dev The constructor that is called when the contract is being deployed."
+            },
+            "id": 2645,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [
+              {
+                "arguments": [
+                  {
+                    "id": 2640,
+                    "name": "CANONICAL_CORI_SUBSCRIPTION",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 3013,
+                    "src": "799:27:12",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  {
+                    "hexValue": "74727565",
+                    "id": 2641,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "bool",
+                    "lValueRequested": false,
+                    "nodeType": "Literal",
+                    "src": "828:4:12",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    },
+                    "value": "true"
+                  }
+                ],
+                "id": 2642,
+                "kind": "baseConstructorSpecifier",
+                "modifierName": {
+                  "id": 2639,
+                  "name": "OperatorFilterer",
+                  "nameLocations": [
+                    "782:16:12"
+                  ],
+                  "nodeType": "IdentifierPath",
+                  "referencedDeclaration": 3005,
+                  "src": "782:16:12"
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "782:51:12"
+              }
+            ],
+            "name": "",
+            "nameLocation": "-1:-1:-1",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2638,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "779:2:12"
+            },
+            "returnParameters": {
+              "id": 2643,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "834:0:12"
+            },
+            "scope": 2646,
+            "src": "768:68:12",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "internal"
+          }
+        ],
+        "scope": 2647,
+        "src": "619:219:12",
+        "usedErrors": [
+          2876
+        ]
+      }
+    ],
+    "src": "32:807:12"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.17+commit.8df45f5f.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.4",
+  "updatedAt": "2023-02-07T19:37:54.479Z",
+  "devdoc": {
+    "details": "Please note that if your token contract does not provide an owner with EIP-173, it must provide         administration methods on the contract itself to interact with the registry otherwise the subscription         will be locked to the options set during construction.",
+    "errors": {
+      "OperatorNotAllowed(address)": [
+        {
+          "details": "Emitted when an operator is not allowed."
+        }
+      ]
+    },
+    "kind": "dev",
+    "methods": {
+      "constructor": {
+        "details": "The constructor that is called when the contract is being deployed."
+      }
+    },
+    "title": "DefaultOperatorFilterer",
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "notice": "Inherits from OperatorFilterer and automatically subscribes to the default OpenSea subscription.",
+    "version": 1
+  }
+}
